@@ -15,31 +15,31 @@ public class GridGraphCreater {
                 addEdgesCorner(i);
                 continue;
             }
-            if(i == 29){
+            if(i == 69){
                 addEdgesCorner(i);
                 continue;
             }
-            if(i == 870){
+            if(i == 4830){
                 addEdgesCorner(i);
                 continue;
             }
-            if(i == 899){
+            if(i == 4899){
                 addEdgesCorner(i);
                 continue;
             }
-            if(i > 0 && i < 29){
+            if(i > 0 && i < 69){
                 addEdgeTopBorder(i);
                 continue;
             }
-            if(i % 30 == 0){
+            if(i % 70 == 0){
                 addEdgeLeftBorder(i);
                 continue;
             }
-            if(i % 30 == 29){
+            if(i % 70 == 69){
                 addEdgeRightBorder(i);
                 continue;
             }
-            if(i > 870 && i < 899){
+            if(i > 4830 && i < 4899){
                 addEdgeBottomBorder(i);
                 continue;
             }
@@ -48,19 +48,19 @@ public class GridGraphCreater {
     }
     private void addEdgesCorner(int i) throws Exception {
         if(i == 0){
-            graph.addEdge(i, i + 30);
+            graph.addEdge(i, i + 70);
             graph.addEdge(i, i + 1);
         }
-        if(i == 29){
-            graph.addEdge(i, i + 30);
+        if(i == 69){
+            graph.addEdge(i, i + 70);
             graph.addEdge(i, i - 1);
         }
-        if(i == 870){
-            graph.addEdge(i, i - 30);
+        if(i == 4830){
+            graph.addEdge(i, i - 70);
             graph.addEdge(i, i + 1);
         }
-        if(i == 899){
-            graph.addEdge(i, i - 30);
+        if(i == 4899){
+            graph.addEdge(i, i - 70);
             graph.addEdge(i, i - 1);
         }
 
@@ -68,28 +68,28 @@ public class GridGraphCreater {
     private void addEdgeTopBorder(int i) throws Exception {
         graph.addEdge(i, i + 1);
         graph.addEdge(i, i - 1);
-        graph.addEdge(i, i + 30);
+        graph.addEdge(i, i + 70);
     }
     private void addEdgeLeftBorder(int i) throws Exception {
         graph.addEdge(i, i + 1);
-        graph.addEdge(i, i - 30);
-        graph.addEdge(i, i + 30);
+        graph.addEdge(i, i - 70);
+        graph.addEdge(i, i + 70);
     }
     private void addEdgeRightBorder(int i) throws Exception {
-        graph.addEdge(i, i - 30);
+        graph.addEdge(i, i - 70);
         graph.addEdge(i, i - 1);
-        graph.addEdge(i, i + 30);
+        graph.addEdge(i, i + 70);
     }
     private void addEdgeBottomBorder(int i) throws Exception {
         graph.addEdge(i, i + 1);
         graph.addEdge(i, i - 1);
-        graph.addEdge(i, i - 30);
+        graph.addEdge(i, i - 70);
     }
     private void addEdgeNormal(int i) throws Exception {
         graph.addEdge(i, i + 1);
         graph.addEdge(i, i - 1);
-        graph.addEdge(i, i + 30);
-        graph.addEdge(i, i - 30);
+        graph.addEdge(i, i + 70);
+        graph.addEdge(i, i - 70);
     }
     public UndirectedUnweightedGraph<Integer> getGraph(){
         return graph;
